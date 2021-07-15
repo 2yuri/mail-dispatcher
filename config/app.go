@@ -18,7 +18,7 @@ type Config struct {
 
 var config *Config
 
-func LoadEnvVars() {
+func init() {
 	serviceFile, err := filepath.Abs(os.Args[0])
 	if err != nil {
 		log.Fatalf("Não foi possivel resgatar o caminho do serviço %v", err)

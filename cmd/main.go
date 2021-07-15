@@ -8,8 +8,6 @@ import (
 )
 
 func main() {
-	config.LoadEnvVars()
-
 	log.Println("root path ", config.GetConfig().RootPath())
 
 	logFile := "mail-dispatcher.log"
