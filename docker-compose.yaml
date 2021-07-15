@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: _go.Dockerfile
+      target: builder
+    image: mail-dispatcher
+    container_name: mail-dispatcher
+    environment:
+      KAFKA_BROKERS: "${KAFKA_BROKERS}"
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      AMAZON_SES_REGION: "${AMAZON_SES_REGION}"
+    volumes:
+      - .:/go/src/app
+    ports:
+      - 8085:8081
+    networks:
+      - mail-network
+
+networks:
+  mail-network:
+    driver: bridge

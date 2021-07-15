@@ -1,0 +1,13 @@
+{
+  "sender":"Message <mail@verifiedmail.com>",
+  "subject":"exemplo de titulo de email",
+  "html_body":"<h1>Este é um corpo com html com bcc</h1>",
+  "recipient": "mail@hotmail.com",
+  "cc": "mail@gmail.com",
+  "bcc": "",
+  "attachments":[
+    {
+      "name": "myfile.pdf",
+      "data": "base64offile"
+    }]
+  }
